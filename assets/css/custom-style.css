@@ -1,81 +1,223 @@
-/*调整全局字体大小*/
-body,html{font-size:14px;}
+/* Base tuning */
+body,
+html {
+    font-size: 14px;
+}
 
-/*左导航悬浮sidebar-menu-inner宽度调整为90px*/
-.sidebar-popup.sidebar-menu-inner > div > ul > li.sidebar-item>ul{position:absolute;top:0px;left:10px;width:90px;z-index:99}
-.sidebar-popup.sidebar-menu-inner ul{width:90px}
-.sidebar-popup.sidebar-menu-inner ul li{width:90px}
+/* Sidebar */
+.sidebar-popup.sidebar-menu-inner > div > ul > li.sidebar-item > ul {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 90px;
+    z-index: 99;
+}
 
-/*隐藏左导航scrollbar*/
-.sidebar-menu.flex-fill::-webkit-scrollbar{display:none}
+.sidebar-popup.sidebar-menu-inner ul,
+.sidebar-popup.sidebar-menu-inner ul li {
+    width: 90px;
+}
 
-/*搜索框搜索图标颜色*/
-#search button i{color:#6C757D;font-size:18px}
+.sidebar-menu.flex-fill::-webkit-scrollbar {
+    display: none;
+}
 
-/*顶部导航栏字体+图标颜色*/
-.big-header-banner .page-header{color:#ffffff;background:rgba(255,255,255,0);box-shadow:none;transition:color .3s,background-color .3s}
-.big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a,.big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item){color:#ffffff;}
-.big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a:hover,.big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item):hover{color:#dc3545;}
-.big-header-banner:not(.header-bg) .header-mini-btn path{stroke:#ffffff;}
-.big-header-banner:not(.header-bg) .header-mini-btn label:hover path{stroke:#ffffff;}
+.sidebar-menu-inner ul li ul li a {
+    margin-left: 30px;
+}
 
-/*搜索栏字体+背景*/
-.header-big #search-text{color:#6C757D;}
-.io-black-mode .header-big #search-text{color:#fff;}
+.sidebar-nav.mini-sidebar {
+    width: 60px !important;
+}
 
-/*搜索activate图标颜色*/
-.header-big .search-type input:checked+label:before{content:'';border-width:8px 8px 0px 8px;border-style:solid;border-color:#ffffff transparent transparent;position:absolute;left:50%;top:0;margin-left:-8px}
+.sidebar-nav.mini-sidebar .sidebar-nav-inner,
+.sidebar-nav.mini-sidebar .sidebar-logo,
+.sidebar-nav.mini-sidebar .logo {
+    width: 60px;
+    max-width: 60px;
+    overflow: hidden;
+}
 
-/*主页搜索搜索框(头+底部)字体颜色*/
-.header-big:not(.no-bg) .s-type-list{color:#20c997}
-.header-big:not(.no-bg) .text-muted,.header-big:not(.no-bg) .search-type .menu-item a,.header-big:not(.no-bg) .big-title .h1{color:#ffffff!important}
+.sidebar-nav.mini-sidebar .logo {
+    line-height: 74px;
+}
 
-/*主页header-banner底部宽度*/
-.post-top{padding-bottom:50px}
+.sidebar-nav.mini-sidebar .logo-expanded {
+    display: none !important;
+}
 
-/*左导航二级导航标题左侧距离*/
-.sidebar-menu-inner ul li ul li a{margin-left:30px;}
+.sidebar-nav.mini-sidebar .logo-collapsed {
+    display: block !important;
+    text-align: center;
+}
 
-/*头部导航二级导航iconfont图标*/
-.navbar-collapse ul li.menu-item-has-children:after{content:'\e612';}
+.sidebar-nav.mini-sidebar .logo-collapsed img {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
 
-/*搜索部分背景样式*/
-.header-big.css-color{background-size:unset;background-position:unset;animation:unset;}
+.sidebar-nav.mini-sidebar + .main-content {
+    margin-left: 60px;
+}
 
-/*搜索热词样式调整*/
-.search-hot-text{
+@media (min-width: 768px) {
+    .page-header .navbar-brand.d-md-none {
+        display: none !important;
+    }
+}
+
+/* Header and search */
+#search button i {
+    color: #007bff;
+    font-size: 18px;
+}
+
+.big-header-banner .page-header {
+    color: #fff;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    transition: color .3s, background-color .3s;
+}
+
+.big-header-banner:not(.header-bg) .page-header .navbar-nav > li > a,
+.big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item) {
+    color: #fff;
+}
+
+.big-header-banner:not(.header-bg) .page-header .navbar-nav > li > a:hover,
+.big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item):hover {
+    color: #dc3545;
+}
+
+.big-header-banner:not(.header-bg) .header-mini-btn path {
+    stroke: #fff;
+}
+
+.big-header-banner:not(.header-bg) .header-mini-btn label:hover path {
+    stroke: #fff;
+}
+
+.header-big #search-text {
+    color: #6c757d;
+}
+
+.io-black-mode .header-big #search-text {
+    color: #fff;
+}
+
+.header-big .search-type input:checked + label:before {
+    content: '';
+    border-width: 8px 8px 0 8px;
+    border-style: solid;
+    border-color: #fff transparent transparent;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -8px;
+}
+
+.header-big:not(.no-bg) .s-type-list {
+    color: #20c997;
+}
+
+.header-big:not(.no-bg) .text-muted,
+.header-big:not(.no-bg) .search-type .menu-item a,
+.header-big:not(.no-bg) .big-title .h1 {
+    color: #fff !important;
+}
+
+.post-top {
+    padding-bottom: 50px;
+}
+
+.navbar-collapse ul li.menu-item-has-children:after {
+    content: '\e612';
+}
+
+.header-big.css-color {
+    position: relative;
+    overflow: hidden;
+    background-color: #11171a;
+    background-image:
+        radial-gradient(circle at 72% 28%, rgba(50, 210, 180, .22), transparent 26%),
+        linear-gradient(rgba(37, 215, 165, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 215, 165, .08) 1px, transparent 1px),
+        linear-gradient(rgba(130, 210, 255, .045) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(130, 210, 255, .045) 2px, transparent 2px),
+        linear-gradient(135deg, #12191e 0%, #18242a 54%, #101519 100%);
+    background-size: 100% 100%, 24px 24px, 24px 24px, 120px 120px, 120px 120px, 100% 100%;
+    background-position: center;
+    animation: unset;
+}
+
+.header-big.css-color:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, .04), transparent 18%, transparent 82%, rgba(255, 255, 255, .04)),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, .035) 0, rgba(255, 255, 255, .035) 1px, transparent 1px, transparent 6px);
+    opacity: .42;
+}
+
+.header-big.css-color > * {
+    position: relative;
+    z-index: 1;
+}
+
+.io-grey-mode .header-big.css-color {
+    background-color: #172024;
+}
+
+.io-black-mode .header-big.css-color {
+    background-color: #0e1316;
+    background-image:
+        radial-gradient(circle at 72% 28%, rgba(35, 175, 150, .18), transparent 28%),
+        linear-gradient(rgba(50, 230, 175, .07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(50, 230, 175, .07) 1px, transparent 1px),
+        linear-gradient(rgba(120, 200, 255, .035) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(120, 200, 255, .035) 2px, transparent 2px),
+        linear-gradient(135deg, #0d1215 0%, #142024 56%, #0a0e11 100%);
+}
+
+/* Search suggestions */
+.search-hot-text {
     position: absolute;
     z-index: 100;
     width: 100%;
     border-radius: 0 0 10px 10px;
-    background: #FFF;
-    box-shadow: 0px 4px 5px 0px #cccccc94;
+    background: #fff;
+    box-shadow: 0 4px 5px 0 #cccccc94;
     overflow: hidden;
 }
-.search-hot-text ul{
+
+.search-hot-text ul {
     margin: 0;
     padding: 5px 0;
 }
-.search-hot-text ul li{
+
+.search-hot-text ul li {
     line-height: 30px;
     font-size: 14px;
-    padding: 0px 25px;
+    padding: 0 25px;
     color: #777;
     cursor: pointer;
 }
-.io-black-mode .search-hot-text ul li{
+
+.io-black-mode .search-hot-text ul li {
     color: #fff;
-}    
-.search-hot-text ul li.current{
+}
+
+.search-hot-text ul li.current,
+.search-hot-text ul li:hover {
     background: #f1f1f1;
     color: #2196f3;
 }
-.search-hot-text ul li:hover{
-    background: #f1f1f1;
-    color: #2196f3;
-    cursor: pointer;
-}
-.search-hot-text ul li span{
+
+.search-hot-text ul li span {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -88,38 +230,97 @@ body,html{font-size:14px;}
     color: #999;
 }
 
+/* Main content grid */
+.io-grey-mode .page-container .grid-bg {
+    background-image:
+        linear-gradient(rgba(0, 200, 83, .08) 1px, transparent 0),
+        linear-gradient(90deg, rgba(0, 200, 83, .08) 1px, transparent 0),
+        linear-gradient(rgba(0, 150, 255, .04) 2px, transparent 0),
+        linear-gradient(90deg, rgba(0, 150, 255, .04) 2px, transparent 0);
+    background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+    background-color: #f0f2f5;
+}
+
+.io-black-mode .page-container .grid-bg {
+    background-image:
+        linear-gradient(rgba(0, 230, 118, .06) 1px, transparent 0),
+        linear-gradient(90deg, rgba(0, 230, 118, .06) 1px, transparent 0),
+        linear-gradient(rgba(100, 200, 255, .03) 2px, transparent 0),
+        linear-gradient(90deg, rgba(100, 200, 255, .03) 2px, transparent 0);
+    background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+    background-color: #1b1d1f;
+}
+
+.content-site {
+    max-width: none;
+}
+
+.section-heading {
+    clear: both;
+}
+
+#favorites {
+    display: none;
+}
+
+.url-card .card {
+    min-height: 74px;
+}
+
+.url-card .url-img {
+    width: 44px;
+    height: 44px;
+}
+
+.url-card .url-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.url-card .default a.togo,
+.url-card .mini a.togo {
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+.url-card .url-info {
+    min-width: 0;
+    padding-right: 22px;
+}
+
+/* Footer */
+footer.main-footer {
+    clear: both;
+    width: 100%;
+}
+
+footer.main-footer .footer-inner {
+    float: none;
+    width: 100%;
+}
+
 footer.main-footer .footer-text {
+    float: none;
     text-align: center;
 }
+
 footer.main-footer .footer-text a {
     color: #007bff;
 }
+
 footer.main-footer .footer-text a:hover {
     color: red;
 }
 
-/*About页面*/
-.panel .panel-body a {color: #007bff;}
-.panel .panel-body a:hover {color: #979898;}
-
-/*网格背景*/
-.io-grey-mode .page-container .grid-bg {
-    background-image: linear-gradient(rgba(50, 0, 0, 0.05) 1px, transparent 0), linear-gradient(90deg, rgba(50, 0, 0, 0.05) 1px, transparent 0); 
-    background-size: 15px 15px;
-    background-color: #d8d8d8;
+/* About page */
+.panel .panel-body a {
+    color: #007bff;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.panel .panel-body a:hover {
+    color: #979898;
+}
